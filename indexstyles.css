@@ -1,0 +1,300 @@
+@charset "utf-8";
+
+/*
+   Author: Jeisson Alexander Hernandez
+   Date:   August, 2024
+   Encriptador de texto
+   Filename: indexstyles.css
+
+*/
+
+/****** General Settings ********/
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace, Arial, Helvetica, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+    background-color: #1a1a1a;
+}
+
+header{
+    text-align: center;
+}
+
+header img{
+    display: inline-block;
+    margin: 20px 20px;
+}
+
+h1{
+    text-align: center;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 0;
+    animation: typing 3.5s steps(30, end) forwards, blink-cursor 0.75s step-end infinite;
+}
+
+h1.typing-finished {
+    animation: typing 3.5s steps(30, end) forwards, disappear-cursor 0.5s step-end 1 3.5s forwards;
+}
+
+.container-fluid{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #00FF00;
+    background-color: #1a1a1a;
+    border: none; 
+    border-radius: 0; 
+    resize: vertical; 
+}
+
+textarea:focus {
+    outline: none; 
+}
+
+.message{
+    text-align: center;
+}
+
+/**** Overlay Container Settings *****/
+#overlay-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 2%;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+}
+
+#overlay-container img {
+    width: 30%;
+    height: auto;
+}
+
+.message {
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+    background-color: transparent;
+}
+
+/********* Card Settings *********/
+div.cardheight {
+    height: 380px;
+    margin: 10px 10px;
+    background-color: #1a1a1a;
+    border: 2px dashed #ffffff;
+}
+
+.card{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0.1);
+}
+
+/********* Button Settings *********/
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#encrypt-button{
+    color: #ffffff;
+    background-color: #007bff;
+}
+
+.decrypt-button{
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+button#encrypt-button:hover{
+    background-color: #0056b3;
+}
+
+button.decrypt-button:hover{
+    background-color: #bdc0c0;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+/********* StyleCard Settings *********/
+.stylecard{
+    background-color: #e0e5e9;
+    border: none;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/********** Separator **********/
+.separator{
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    margin-top: 20px;
+}
+
+/********** Footer **********/
+.d-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #2c3e50; 
+    padding: 20px 0;
+}
+
+.footer-item {
+    flex: 1 1 30%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    max-width: 30%; 
+    box-sizing: border-box; 
+    background-color: #2c3e50; 
+}
+
+.footer-item img {
+    margin-bottom: 10px;
+    background-color: #2c3e50;
+}
+
+.footer-item a, 
+.footer-item p {
+    margin: 5px 0;
+    text-align: center;
+    background-color: transparent;
+}
+
+
+/********** Animations **********/
+@keyframes typing {
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+@keyframes blink-cursor {
+    50% { border-color: transparent; }
+}
+
+@keyframes disappear-cursor {
+    to { border-color: transparent; }
+}
+
+/**** Responsive design for phones ****/
+@media (max-width: 767px) {
+    .card{
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+
+    textarea{
+        height: auto;
+        font-size: 0.8rem;
+    }
+
+    button{
+        font-size: 0.8rem;
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #encrypt-button, .decrypt-button {
+        width: 30%;
+        margin: 5px 0;
+    }
+
+    .d-flex {
+        flex-direction: column; 
+    }
+
+    .footer-item {
+        max-width: 70%; 
+        margin-bottom: 20px; 
+    }
+
+    .footer-item:nth-child(1) { order: 2; } 
+    .footer-item:nth-child(2) { order: 1; } 
+    .footer-item:nth-child(3) { order: 3; } 
+}
+
+/**** Responsive design for tablets ****/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .col-sm-6{
+        width: 80%;
+    }
+
+    .card{
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    textarea{
+        height: auto;
+        font-size: 0.9rem;
+    }
+
+    button{
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    .custom-center{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .col-sm-6.button-container{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #encrypt-button, .decrypt-button{
+        width: 80%;
+        margin: 10px, 0;
+    }
+
+    .footer-item {
+        max-width: 25%; 
+    }
+}
