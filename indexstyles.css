@@ -61,6 +61,9 @@ h1.typing-finished {
     resize: vertical; 
 }
 
+textarea#user_input, textarea#user_output {
+    resize: none;
+}
 textarea:focus {
     outline: none; 
 }
@@ -219,6 +222,7 @@ button.decrypt-button:hover{
     textarea{
         height: auto;
         font-size: 0.8rem;
+        resize: none;
     }
 
     button{
@@ -269,6 +273,7 @@ button.decrypt-button:hover{
     textarea{
         height: auto;
         font-size: 0.9rem;
+        resize: none;
     }
 
     button{
