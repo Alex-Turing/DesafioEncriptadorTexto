@@ -64,6 +64,8 @@ function decrypt() {
     let text_without_accents = removeAccents(encrypted_text);
     let decrypted_text = decryptText(text_without_accents);
 
+    document.getElementById("overlay-container").style.display = "none";
+    document.getElementById("message").innerHTML = "";
     user_output.value = decrypted_text;
 }
 
